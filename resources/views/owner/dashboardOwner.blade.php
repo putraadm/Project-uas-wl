@@ -1,33 +1,29 @@
-<!-- <!DOCTYPE html>
-<html dir="ltr" lang="en"> -->
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
 
-<!-- <head> -->
-    <!-- <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <meta name="keywords"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, materialpro admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, materialpro admin lite design, materialpro admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
         content="Material Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow"> -->
-    <!-- <title>Material Pro Lite Template by WrapPixel</title> -->
-    <!-- <link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" /> -->
+    <meta name="robots" content="noindex,nofollow">
+    <title>Material Pro Lite Template by WrapPixel</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" />
     <!-- Favicon icon -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template' )}}/assets/images/favicon.png"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template/assets/images/favicon.png') }}">
     <!-- chartist CSS -->
-    <!-- <link href="{{ asset('template' )}}/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="{{ asset('template' )}}/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="{{ asset('template' )}}/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet"> -->
+    <link href="{{ asset('template/assets/plugins/chartist-js/dist/chartist.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('template/assets/plugins/chartist-js/dist/chartist-init.css') }}" rel="stylesheet">
+    <link href="{{ asset('template/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet">
     <!--This page css - Morris CSS -->
-    <!-- <link href="{{ asset('template' )}}/assets/plugins/c3-master/c3.min.css" rel="stylesheet"> -->
+    <link href="{{ asset('template/assets/plugins/c3-master/c3.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <!-- <link href="{{ asset('template/html' )}}/css/style.min.css" rel="stylesheet"> -->
-<!-- </head> -->
-
-@extends('layouts.master')
-
-@section('title', 'Panel Owner')
+    <link href="{{ asset('template/html/css/style.min.css') }}" rel="stylesheet">
+</head>
 
 <body>
     <!-- ============================================================== -->
@@ -58,14 +54,14 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{ asset('template' )}}/assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('template/assets/images/logo-light-icon.png') }}" alt="homepage" class="dark-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{ asset('template' )}}/assets/images/logo-light-text.png" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('template/assets/images/logo-light-text.png') }}" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -113,7 +109,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('template' )}}/assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Markarn Doe
+                                <img src="{{ asset('template/assets/images/users/1.jpg') }}" alt="user" class="profile-pic me-2">Markarn Doe
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
                         </li>
@@ -138,20 +134,12 @@
                                 href="owner" aria-expanded="false"><i class="mdi me-2 mdi-gauge"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ asset('template/html' )}}/pages-profile.html" aria-expanded="false">
+                                href="profile" aria-expanded="false">
                                 <i class="mdi me-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ asset('template/html' )}}/table-basic.html" aria-expanded="false"><i class="mdi me-2 mdi-table"></i><span
+                                href="laporan" aria-expanded="false"><i class="mdi me-2 mdi-table"></i><span
                                     class="hide-menu">Table</span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-emoticon"></i><span class="hide-menu">Icon</span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-error-404.html" aria-expanded="false"><i class="mdi me-2 mdi-help-circle"></i><span
-                                    class="hide-menu">Error 404</span></a>
                         </li>
                     </ul>
 
@@ -257,8 +245,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> © 2021 Material Pro Admin by <a href="https://www.wrappixel.com/">wrappixel.com </a>
-            </footer>
+            <footer class="footer">© 2021 Material Pro Admin by <a href="https://www.wrappixel.com/">wrappixel.com </a></footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -270,29 +257,31 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ asset('template' )}}/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('template/assets/plugins/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('template' )}}/assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('template/html' )}}/js/app-style-switcher.js"></script>
+    <script src="{{ asset('template/assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('template/html/js/app-style-switcher.js') }}"></script>
     <!--Wave Effects -->
-    <script src="{{ asset('template/html' )}}/js/waves.js"></script>
+    <script src="{{ asset('template/html/js/waves.js') }}"></script>
     <!--Menu sidebar -->
-    <script src="{{ asset('template/html' )}}/js/sidebarmenu.js"></script>
+    <script src="{{ asset('template/html/js/sidebarmenu.js') }}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
     <!-- chartist chart -->
-    <script src="{{ asset('template' )}}/assets/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="{{ asset('template' )}}/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="{{ asset('template/assets/plugins/chartist-js/dist/chartist.min.js') }}"></script>
+    <script src="{{ asset('template/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
     <!--c3 JavaScript -->
-    <script src="{{ asset('template' )}}/assets/plugins/d3/d3.min.js"></script>
-    <script src="{{ asset('template' )}}/assets/plugins/c3-master/c3.min.js"></script>
+    <script src="{{ asset('template/assets/plugins/d3/d3.min.js') }}"></script>
+    <script src="{{ asset('template/assets/plugins/c3-master/c3.min.js') }}"></script>
     <!--Custom JavaScript -->
-    <script src="{{ asset('template/html' )}}/js/pages/dashboards/dashboard1.js"></script>
-    <script src="{{ asset('template/html' )}}/js/custom.js"></script>
+    <script src="{{ asset('template/html/js/pages/dashboards/dashboard1.js') }}"></script>
+    <script src="{{ asset('template/html/js/custom.js') }}"></script>
 </body>
 
 </html>
