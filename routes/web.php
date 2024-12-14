@@ -18,14 +18,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-Route::get('/owner', function () {
-    return view('owner/dashboardOwner');
-})->name('owner');
-
-Route::get('/profile', function () {
-    return view('owner/profile');
-})->name('profile');
-
-Route::get('/laporan', function () {
-    return view('owner/laporan');
-})->name('laporan');
