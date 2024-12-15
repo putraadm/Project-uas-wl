@@ -14,15 +14,15 @@
     <title>Material Pro Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template' )}}/assets/images/favicon.png">
-    <!-- chartist CSS -->
-    <link href="{{ asset('template' )}}/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="{{ asset('template' )}}/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="{{ asset('template' )}}/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <!--This page css - Morris CSS -->
-    <link href="{{ asset('template' )}}/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template/assets/images/favicon.png') }}">
     <!-- Custom CSS -->
-    <link href="{{ asset('template/html' )}}/css/style.min.css" rel="stylesheet">
+    <link href="{{ asset('template/html/css/style.min.css') }}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
@@ -38,7 +38,7 @@
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
@@ -54,14 +54,14 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{ asset('template' )}}/assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('template/assets/images/logo-light-icon.png') }}" alt="homepage" class="dark-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{ asset('template' )}}/assets/images/logo-light-text.png" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('template/assets/images/logo-light-text.png') }}" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -109,7 +109,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('template' )}}/assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Markarn Doe
+                                <img src="{{ asset('template/assets/images/users/1.jpg') }}" alt="user" class="profile-pic me-2">Markarn Doe
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
                         </li>
@@ -131,24 +131,15 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi me-2 mdi-gauge"></i><span
+                                href="owner" aria-expanded="false"><i class="mdi me-2 mdi-gauge"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ asset('template/html' )}}/pages-profile.html" aria-expanded="false">
+                                href="profile" aria-expanded="false">
                                 <i class="mdi me-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ asset('template/html' )}}/table-basic.html" aria-expanded="false"><i class="mdi me-2 mdi-table"></i><span
-                                    class="hide-menu">Table</span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-emoticon"></i><span class="hide-menu">Icon</span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-error-404.html" aria-expanded="false"><i class="mdi me-2 mdi-help-circle"></i><span
-                                    class="hide-menu">Error 404</span></a>
-                        </li>
+                                href="laporan" aria-expanded="false"><i class="mdi me-2 mdi-table"></i><span
+                                    class="hide-menu">Table</span></a></li>
                     </ul>
 
                 </nav>
@@ -188,12 +179,12 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Dashboard</h3>
+                        <h3 class="page-title mb-0 p-0">Table</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Table</li>
                                 </ol>
                             </nav>
                         </div>
@@ -208,44 +199,79 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <!-- ============================================================== -->
-                <!-- Sales chart -->
+                <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-12">
+                    <!-- column -->
+                    <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <div>
-                                                <h3 class="card-title">Sales Overview</h3>
-                                                <h6 class="card-subtitle">Ample Admin Vs Pixel Admin</h6>
-                                            </div>
-                                            <div class="ms-lg-auto mx-sm-auto mx-lg-0">
-                                                <ul class="list-inline d-flex">
-                                                    <li class="me-4">
-                                                        <h6 class="text-success"><i
-                                                                class="fa fa-circle font-10 me-2 "></i>Ample</h6>
-                                                    </li>
-                                                    <li>
-                                                        <h6 class="text-info"><i
-                                                                class="fa fa-circle font-10 me-2"></i>Pixel</h6>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="amp-pxl" style="height: 360px;">
-                                            <div class="chartist-tooltip"></div>
-                                        </div>
-                                    </div>
+                                <h4 class="card-title">Basic Table</h4>
+                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
+                                <div class="table-responsive">
+                                    <table class="table user-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="border-top-0">#</th>
+                                                <th class="border-top-0">First Name</th>
+                                                <th class="border-top-0">Last Name</th>
+                                                <th class="border-top-0">Username</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Deshmukh</td>
+                                                <td>Prohaska</td>
+                                                <td>@Genelia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Deshmukh</td>
+                                                <td>Gaylord</td>
+                                                <td>@Ritesh</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sanghani</td>
+                                                <td>Gusikowski</td>
+                                                <td>@Govinda</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Roshan</td>
+                                                <td>Rogahn</td>
+                                                <td>@Hritik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Joshi</td>
+                                                <td>Hickle</td>
+                                                <td>@Maruti</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Nigam</td>
+                                                <td>Eichmann</td>
+                                                <td>@Sonu</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -269,26 +295,16 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ asset('template' )}}/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('template/assets/plugins/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('template' )}}/assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('template/html' )}}/js/app-style-switcher.js"></script>
+    <script src="{{ asset('template/assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('template/html/js/app-style-switcher.js') }}"></script>
     <!--Wave Effects -->
-    <script src="{{ asset('template/html' )}}/js/waves.js"></script>
+    <script src="{{ asset('template/html/js/waves.js') }}"></script>
     <!--Menu sidebar -->
-    <script src="{{ asset('template/html' )}}/js/sidebarmenu.js"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <!-- chartist chart -->
-    <script src="{{ asset('template' )}}/assets/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="{{ asset('template' )}}/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
-    <!--c3 JavaScript -->
-    <script src="{{ asset('template' )}}/assets/plugins/d3/d3.min.js"></script>
-    <script src="{{ asset('template' )}}/assets/plugins/c3-master/c3.min.js"></script>
+    <script src="{{ asset('template/html/js/sidebarmenu.js') }}"></script>
     <!--Custom JavaScript -->
-    <script src="{{ asset('template/html' )}}/js/pages/dashboards/dashboard1.js"></script>
-    <script src="{{ asset('template/html' )}}/js/custom.js"></script>
+    <script src="{{ asset('template/html/js/custom.js') }}"></script>
 </body>
 
 </html>
