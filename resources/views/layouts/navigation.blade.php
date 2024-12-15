@@ -5,17 +5,49 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ Auth::user()->role == 'owner' ? route('owner.dashboard') : route('dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="Auth::user()->role == 'owner' ? route('owner.dashboard') : route('dashboard')" :active="Auth::user()->role == 'owner' ? request()->routeIs('owner.dashboard') : request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <!-- Owner link -->
+                     @if(Auth::user()->role == 'owner')
+                        <x-nav-link href="owner/product" :active=" request()->routeIs('owner.product')">
+                            {{ __('Product') }}
+                        </x-nav-link>
+                    
+                        <x-nav-link href="owner/report" :active=" request()->routeIs('owner.report')">
+                            {{ __('Report') }}
+                        </x-nav-link>
+                     @endif
+                    
+                     <!-- Kasir link -->
+                     @if(Auth::user()->role == 'kasir')
+                        <x-nav-link href="product" :active=" request()->routeIs('kasir.product')">
+                            {{ __('Product') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="order" :active=" request()->routeIs('kasir.order')">
+                            {{ __('Order') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="order_list" :active=" request()->routeIs('kasir.order_list')">
+                            {{ __('Order List') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('kasir.kategori') }}" :active=" request()->routeIs('kasir.kategori')">
+                            {{ __('Kategori') }}
+                        </x-nav-link>
+                     @endif
                 </div>
+
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -70,6 +102,37 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <!-- Owner link -->
+            @if(Auth::user()->role == 'owner')
+                <x-responsive-nav-link href="owner/product" :active=" request()->routeIs('owner.product')">
+                    {{ __('Product') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link href="owner/report" :active=" request()->routeIs('owner.report')">
+                    {{ __('Report') }}
+                </x-responsive-nav-link>
+             @endif
+            
+             <!-- Kasir link -->
+             @if(Auth::user()->role == 'kasir')
+                
+                <x-responsive-nav-link href="product" :active=" request()->routeIs('kasir.product')">
+                    {{ __('Product') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link href="order" :active=" request()->routeIs('kasir.order')">
+                    {{ __('Order') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link href="order_list" :active=" request()->routeIs('kasir.order_list')">
+                    {{ __('Order List') }}
+                </x-responsive-nav-link>
+                
+                <x-responsive-nav-link href="kategori" :active=" request()->routeIs('kasir.kategori')">
+                    {{ __('Kategori') }}
+                </x-responsive-nav-link>
+             @endif
         </div>
 
         <!-- Responsive Settings Options -->
