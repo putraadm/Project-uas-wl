@@ -28,7 +28,8 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Transaction::create($request->all());
+        return redirect()->back();
     }
 
     /**

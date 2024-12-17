@@ -16,7 +16,7 @@ class ProductController extends Controller
         $data = Product::all();
         $kategori = Kategori::all();
         // dd($data);
-        return view('product', ['dataProduct' => $data, 'dataKategori' => $kategori]);
+        return view('produk.index', ['dataProduct' => $data, 'dataKategori' => $kategori]);
     }
 
     /**
@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('addProduct');
+        // return view('addProduct');
     }
 
     /**
@@ -53,24 +53,35 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $data = Product::find($id);
+        $kategori = Kategori::all();
+        return view('produk.edit', ['data' => $data, 'kat' => $kategori]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $data = Product::find($id);
+        $kategori = Kategori::all();
+        $data->nama_product = $request->nama_product;
+        $data->harga = $request->harga;
+        $data->stock = $request->stock;
+        $data->id_kategori = $request->id_kategori;
+        $data->save();
+        return redirect()->route('kasir.product');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $data = Product::find($id);
+        $data->delete();
+        return redirect('kasir.product');
     }
 }

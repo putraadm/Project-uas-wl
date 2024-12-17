@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,7 +13,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+        $product = Product::all();
+        return view('orders.index', ['dataOrder' => $orders, 'dataProduk' => $product]);
     }
 
     /**
@@ -20,7 +23,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+        return view('orders.create', compact('products'));
     }
 
     /**
@@ -28,7 +32,15 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order = new Order();
+        $order->product_id = $request->product_id;
+        // $order->product_name = Product::find($request->product_id)->nama_product;
+        $order->nama = $request->nama;
+        $order->jumlah = $request->jumlah;
+        $order->total = Product::find($request->product_id)->harga * $request->jumlah; 
+        $order->save();
+
+        return redirect()->route('orders.index');
     }
 
     /**
@@ -36,7 +48,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $orderDetails = $order->orderDetails;
+        return view('orders.show', compact('order', 'orderDetails'));
     }
 
     /**

@@ -8,4 +8,7 @@ class Transaction extends Model
 {
     protected $table = 'transactions';
     protected $fillable = ['order_id', 'bayar_id', 'balance', 'transac_date', 'transac_amount', 'user_id', 'payment_method'];
+    public function order() {
+        return $this->belongsTo(Order::class);
+    }
 }

@@ -29,17 +29,17 @@
                     
                      <!-- Kasir link -->
                      @if(Auth::user()->role == 'kasir')
-                        <x-nav-link href="product" :active=" request()->routeIs('kasir.product')">
+                        <x-nav-link href="{{ route('kasir.product') }}" :active=" request()->routeIs('kasir.product')">
                             {{ __('Product') }}
                         </x-nav-link>
 
-                        <x-nav-link href="order" :active=" request()->routeIs('kasir.order')">
+                        <x-nav-link href="{{ route('orders.index') }}" :active=" request()->routeIs('orders.index')">
                             {{ __('Order') }}
                         </x-nav-link>
 
-                        <x-nav-link href="order_list" :active=" request()->routeIs('kasir.order_list')">
+                        <!-- <x-nav-link href="order_list" :active=" request()->routeIs('kasir.order_list')">
                             {{ __('Order List') }}
-                        </x-nav-link>
+                        </x-nav-link> -->
 
                         <x-nav-link href="{{ route('kasir.kategori') }}" :active=" request()->routeIs('kasir.kategori')">
                             {{ __('Kategori') }}

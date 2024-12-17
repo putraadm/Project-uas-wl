@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Order_details;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,10 @@ class OrderDetailsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order_details $order_details)
+    public function show(Order $order)
     {
-        //
+        $orderDetails = $order->orderDetails; 
+        return view('orders.show', compact('order', 'orderDetails'));
     }
 
     /**
