@@ -66,7 +66,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $data = Product::find($id);
-        $kategori = Kategori::all();
+        // $kategori = Kategori::all();
         $data->nama_product = $request->nama_product;
         $data->harga = $request->harga;
         $data->stock = $request->stock;
@@ -82,6 +82,6 @@ class ProductController extends Controller
     {
         $data = Product::find($id);
         $data->delete();
-        return redirect('kasir.product');
+        return redirect()->route('kasir.product');
     }
 }

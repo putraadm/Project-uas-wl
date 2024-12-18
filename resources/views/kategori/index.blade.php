@@ -38,10 +38,8 @@
                              </td>
                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm flex space-x-2">
                                 <a href="{{route('kategori.edit', $data->id)}}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700">Edit</a>
-                                <!-- <button onclick="openModalEdit()" value="{{$data->id}}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700">Edit</button> -->
                                 <form action="{{ route('kategori.delete', $data->id) }}" method="POST">
                                     @csrf
-                                    <!-- @method('DELETE') -->
                                     <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Hapus</button>
                                 </form>
                              </td>

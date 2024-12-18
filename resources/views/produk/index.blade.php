@@ -56,6 +56,7 @@
                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm flex space-x-2">
                                  <a href="{{ route('product.edit', $data->id) }}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700">Edit</a>
                                  <form action="{{ route('product.delete', $data->id) }}" method="POST">
+                                    @csrf
                                     <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Hapus</button>
                                 </form>
                              </td>
@@ -116,9 +117,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal Edit -->
-
 
     <script>
         function openModal() {

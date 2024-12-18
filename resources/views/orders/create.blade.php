@@ -4,7 +4,7 @@
             {{ __('Pemesanan') }}
         </h2>
     </x-slot>
-    
+
     <div class="max-w-xl mx-auto p-8 bg-white shadow-lg rounded-lg">
         <h3 class="text-2xl font-bold mb-6 text-gray-800">Formulir Pemesanan</h3>
         <form action="{{ route ('orders.store') }}" method="POST" class="space-y-6">
