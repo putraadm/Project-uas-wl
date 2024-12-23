@@ -10,12 +10,12 @@
             <div class="grid grid-cols-5 gap-4">
                 <div class="col-span-3 bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        {{ __("Content 1") }}
+                        {{ __("Selamat Datang di Dashboard Kasir ") }}
                     </div>
                 </div>
                 <div class="col-span-2 bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        {{ __("Content 2") }}
+                        
                     </div>
                 </div>
             </div>

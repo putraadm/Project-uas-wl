@@ -29,11 +29,16 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'id' => 'required|integer',
+            'nama' => 'required|string|max:255', 
+        ]);
+
         $data = new Kategori();
         $data->id = $request->id;
         $data->nama_kategori = $request->nama_kategori;
         $data->save();
-        return redirect()->route('kasir.kategori');
+        return redirect()->route('kasir.kategori')->with("Success, Menambah Kategori!");
     }
 
     /**

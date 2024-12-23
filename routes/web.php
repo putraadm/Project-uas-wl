@@ -3,6 +3,7 @@
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\ProductController;
@@ -48,12 +49,18 @@ Route::middleware(['auth','kasirMiddleware'])->group(function(){
     Route::post('/Delete/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.delete');
     
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
     Route::post('/orders/tambah', [OrderController::class, 'store'])->name('orders.store');
+    // Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
     // Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+    
 });
 
 // owner route
 Route::middleware(['auth','ownerMiddleware'])->group(function(){
     Route::get('/owner/dashboard', [OwnerController::class, 'index'])->name('owner.dashboard');
+    Route::get('/Laporan', [LaporanController::class, 'index'])->name('owner.laporan');
+    Route::get('/report/export-pdf', [OrderController::class, 'exportPdf'])->name('report.exportPdf');
+    // laporan
+    Route::get('/chart', [OrderController::class, 'chart'])->name('laporan.chart');
+    Route::get('/grafik-chart', [OrderController::class, 'grafik'])->name('owner.chart');
 });

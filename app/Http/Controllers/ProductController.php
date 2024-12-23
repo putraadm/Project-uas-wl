@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::all();
+        $data = Product::with('kategori')->get();
         $kategori = Kategori::all();
         // dd($data);
         return view('produk.index', ['dataProduct' => $data, 'dataKategori' => $kategori]);
@@ -32,6 +32,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'id' => 'required|integer',
+            'nama_product' => 'required|string|max:255',
+            'harga' => 'required|numeric',
+            'stock' => 'required|integer', 
+            'id_kategori' => 'required|integer',
+        ]);
+        
         $data = new Product();
         $data->id = $request->id;
         $data->nama_product = $request->nama_product;
@@ -39,7 +47,7 @@ class ProductController extends Controller
         $data->stock = $request->stock;
         $data->id_kategori = $request->id_kategori;
         $data->save();
-        return redirect()->route('kasir.product');
+        return redirect()->route('kasir.product')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
@@ -72,7 +80,7 @@ class ProductController extends Controller
         $data->stock = $request->stock;
         $data->id_kategori = $request->id_kategori;
         $data->save();
-        return redirect()->route('kasir.product');
+        return redirect()->route('kasir.product')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -82,6 +90,6 @@ class ProductController extends Controller
     {
         $data = Product::find($id);
         $data->delete();
-        return redirect()->route('kasir.product');
+        return redirect()->route('kasir.product')->with('success', 'Data Berhasil Dihapus');
     }
 }

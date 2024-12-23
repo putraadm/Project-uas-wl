@@ -6,29 +6,33 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ Auth::user()->role == 'owner' ? route('owner.dashboard') : route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                        <!-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800" /> -->
+                         <img class="block h-9 w-auto fill-current text-gray-800" src="{{ asset('/assets/pang-pang-korean food.jpeg') }}" alt="logo-pang-pang-korean-food"></img>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="Auth::user()->role == 'owner' ? route('owner.dashboard') : route('dashboard')" :active="Auth::user()->role == 'owner' ? request()->routeIs('owner.dashboard') : request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-
-                    <!-- Owner link -->
-                     @if(Auth::user()->role == 'owner')
-                        <x-nav-link href="owner/product" :active=" request()->routeIs('owner.product')">
-                            {{ __('Product') }}
-                        </x-nav-link>
                     
-                        <x-nav-link href="owner/report" :active=" request()->routeIs('owner.report')">
+                    <!-- Owner link -->
+                    @if(Auth::user()->role == 'owner')
+                        <x-nav-link :href="Auth::user()->role == 'owner' ? route('owner.dashboard') : route('dashboard')" :active="Auth::user()->role == 'owner' ? request()->routeIs('owner.dashboard') : request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                        
+                        <x-nav-link href="{{ route('owner.laporan') }}" :active=" request()->routeIs('owner.laporan')">
                             {{ __('Report') }}
+                        </x-nav-link>
+                        
+                        <x-nav-link href="{{ route('owner.chart') }}" :active=" request()->routeIs('owner.chart')">
+                            {{ __('Graph Chart') }}
                         </x-nav-link>
                      @endif
                     
                      <!-- Kasir link -->
                      @if(Auth::user()->role == 'kasir')
+                        
+
                         <x-nav-link href="{{ route('kasir.product') }}" :active=" request()->routeIs('kasir.product')">
                             {{ __('Product') }}
                         </x-nav-link>

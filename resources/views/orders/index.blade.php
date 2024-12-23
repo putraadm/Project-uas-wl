@@ -5,6 +5,12 @@
         </h2>
     </x-slot>
 
+    @if(session('error'))
+        <div class="bg-red-500 text-white p-4 rounded-md mb-4">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="container mx-auto px-4 sm:px-8 py-8">
          <div class="py-2 flex justify-between items-center">
              <h2 class="text-2xl font-semibold leading-tight">Pemesanan</h2>
@@ -48,7 +54,7 @@
                                 <p class="text-gray-900 whitespace-no-wrap">{{ $data->jumlah }}</p>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $data->product->harga * $data->jumlah }}</p>
+                                <p class="text-gray-900 whitespace-no-wrap">Rp. {{ $data->total }}</p>
                             </td>
                          </tr>
                          @endforeach
@@ -58,7 +64,7 @@
          </div>
      </div>
 
-     <!-- Modal ADD -->
+    <!-- Modal ADD -->
     <div id="addOrderModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 hidden">
         <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full">
             <div class="px-6 py-4">
@@ -96,7 +102,7 @@
                         </div>
                         <div class="flex justify-end">
                             <button type="button" onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Batal</button>
-                            <button type="submit" class="ml-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Simpan</button>
+                            <button type="submit" class="ml-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Konfirmasi</button>
                         </div>
                     </form>
                 </div>

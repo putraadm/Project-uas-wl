@@ -5,14 +5,25 @@
         </h2>
     </x-slot>
 
+    @if(session('error'))
+        <div class="bg-red-500 text-white p-4 rounded-md mb-4">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="container mx-auto px-4 sm:px-8 py-8">
-         <div class="py-2 flex justify-between items-center">
-             <h2 class="text-2xl font-semibold leading-tight">Daftar Produk</h2>
-             <button onclick="openModal()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Tambah Produk</button>
-         </div>
+        <!-- <div class="py-2 flex flex-col"> -->
+            <div class="py-2 flex flex-wrap items-center justify-between">
+                <h2 class="text-2xl font-semibold leading-tight">Daftar Produk</h2>
+                <div class="flex flex-grow justify-end items-center space-x-2">
+                    <button onclick="openModal()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Tambah Produk</button>
+                </div>
+            </div>
+        <!-- </div> -->
+
          <div class="my-2 overflow-x-auto">
              <div class="min-w-full shadow rounded-lg overflow-hidden">
-                 <table class="min-w-full leading-normal">
+                 <table class="min-w-full leading-normal" id="table-produk">
                      <thead>
                          <tr>
                              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -67,6 +78,12 @@
              </div>
          </div>
      </div>
+
+     <script>
+          $(document).ready(function () {
+               $('#table-produk').DataTable();
+          });
+     </script>
 
     <!-- Modal ADD -->
     <div id="addProductModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 hidden">
