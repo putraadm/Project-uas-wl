@@ -50,6 +50,7 @@ Route::middleware(['auth','kasirMiddleware'])->group(function(){
     
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::post('/orders/tambah', [OrderController::class, 'store'])->name('orders.store');
+    Route::post('/Delete/order/{id}', [OrderController::class, 'destroy'])->name('order.delete');
     // Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
     // Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
     

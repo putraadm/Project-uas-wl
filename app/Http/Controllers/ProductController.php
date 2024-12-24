@@ -73,6 +73,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'id' => 'required|integer',
+            'nama_product' => 'required|string|max:255',
+            'harga' => 'required|numeric',
+            'stock' => 'required|integer', 
+            'id_kategori' => 'required|integer',
+        ]);
+        
         $data = Product::find($id);
         // $kategori = Kategori::all();
         $data->nama_product = $request->nama_product;

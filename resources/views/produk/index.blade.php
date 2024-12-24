@@ -39,7 +39,7 @@
                                  Stock
                              </th>
                              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                 ID_Kategori
+                                 Kategori
                              </th>
                              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                  Aksi
@@ -117,7 +117,7 @@
                             <input type="text" id="stock" name="stock" class="mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
                         </div>
                         <div class="mb-4">
-                             <label for="id_kategori" class="block text-sm font-medium text-gray-700">ID Kategori</label>
+                             <label for="id_kategori" class="block text-sm font-medium text-gray-700">Kategori</label>
                              <select id="id_kategori" name="id_kategori" class="mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
                                 <option value="">Pilih Kategori</option>
                                 @foreach($dataKategori as $data)

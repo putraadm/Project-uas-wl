@@ -36,6 +36,9 @@
                              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                  Total
                              </th>
+                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                 Aksi
+                             </th>
                          </tr>
                      </thead>
                      <tbody>
@@ -56,6 +59,12 @@
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-gray-900 whitespace-no-wrap">Rp. {{ $data->total }}</p>
                             </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm flex space-x-2">
+                                 <form action="{{ route('order.delete', $data->id) }}" method="POST">
+                                    @csrf
+                                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Hapus</button>
+                                </form>
+                             </td>
                          </tr>
                          @endforeach
                      </tbody>

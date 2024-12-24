@@ -38,7 +38,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            // 'id' => 'required|integer',
+            'id_pesanan' => 'required|integer',
             'nama' => 'required|string|max:255',
             'id_produk' => 'required|string|max:255',
             'jumlah' => [
@@ -120,17 +120,25 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, $id)
     {
-        //
+        // $data = Order::find($id);
+        // $data->product_id = $request->product_id;
+        // $data->nama = $request->nama;
+        // $data->jumlah = $request->jumlah;
+        // $data->total = $request->total;
+        // $data->save();
+        // return redirect()->route('orders.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        $data = Order::find($id);
+        $data->delete();
+        return redirect()->route('orders.index')->with('success', 'Data Berhasil Dihapus');
     }
 
     public function exportPdf(){
